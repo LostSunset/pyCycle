@@ -246,9 +246,9 @@ def viewer(prob, pt, file=sys.stdout):
         HPT_PR = prob[pt+'.hpt.PR']
         FAR = prob[pt+'.balance.FAR']
 
-    summary_data = (MN, prob[pt+'.fc.alt'], prob[pt+'.inlet.Fl_O:stat:W'], prob[pt+'.perf.Fn'],
-                        prob[pt+'.perf.Fg'], prob[pt+'.inlet.F_ram'], prob[pt+'.perf.OPR'],
-                        prob[pt+'.perf.TSFC'], prob[pt+'.splitter.BPR'])
+    summary_data = (MN[0], prob[pt+'.fc.alt'][0], prob[pt+'.inlet.Fl_O:stat:W'][0], prob[pt+'.perf.Fn'][0],
+                        prob[pt+'.perf.Fg'][0], prob[pt+'.inlet.F_ram'][0], prob[pt+'.perf.OPR'][0],
+                        prob[pt+'.perf.TSFC'][0], prob[pt+'.splitter.BPR'][0])
 
     print(file=file, flush=True)
     print(file=file, flush=True)
@@ -436,7 +436,7 @@ if __name__ == "__main__":
     prob.set_solver_print(level=-1)
     prob.set_solver_print(level=2, depth=1)
 
-    flight_env = [(0.8, 35000), (0.7, 35000), (0.4, 35000),
+    flight_env = [(0.8, 35000), (0.7, 35000), (0.55, 35000), (0.46, 35000), (0.4, 35000),
                   (0.4, 20000), (0.6, 20000), (0.8, 20000), 
                   (0.8, 10000), (0.6, 10000), (0.4, 10000), (0.2, 10000), (0.001, 10000),
                   (.001, 1000), (0.2, 1000), (0.4, 1000), (0.6, 1000),
